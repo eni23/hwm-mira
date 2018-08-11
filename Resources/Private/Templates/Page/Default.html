@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+<html lang="en">
+	<head>
+		<f:section name="metadata">
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			<meta name="description" content="">
+			<meta name="author" content="">
+		</f:section>
+
+		<f:section name="stylesheets">
+			<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Hammersmith+One|Josefin+Sans|Quicksand|Sarala" rel="stylesheet">
+			<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+			<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/style2.css', package: 'e23.miraWebsite')}" media="all" />
+			<f:if condition="{node.context.workspace.name} != 'live'">
+				<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/Backend.css', package: 'e23.miraWebsite')}" media="all" />
+			</f:if>
+		</f:section>
+
+		<f:section name="headScripts">
+			<!-- headScripts -->
+		</f:section>
+
+	</head>
+
+	<body>
+
+		<f:section name="body">
+			{parts.mainMenu -> f:format.raw()}
+			{content.main -> f:format.raw()}
+		</f:section>
+		<f:section name="bodyScripts">
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js"></script>
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+		</f:section>
+	</body>
+</html>
