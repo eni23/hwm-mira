@@ -4,6 +4,7 @@
 
 namespace: Site=e23.miraWebsite
 
+include: NodeTypes/*
 
 page = Neos.Neos:Page {
 	head {
@@ -26,7 +27,7 @@ page = Neos.Neos:Page {
 			@if.image = ${q(node).property('image')}
 		}
 		imageTitleText = ${q(node).property('imageTitleText')}
-    
+
 		templatePath = 'resource://e23.miraWebsite/Private/Templates/Page/Default.html'
 		sectionName = 'body'
 		parts {
