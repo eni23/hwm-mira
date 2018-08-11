@@ -17,6 +17,13 @@ page = Neos.Neos:Page {
 			templatePath = 'resource://e23.miraWebsite/Private/Templates/Page/Default.html'
 			sectionName = 'headScripts'
 		}
+    
+		metadata = Neos.Fusion:Template {
+			templatePath = 'resource://Neos.Demo/Private/Templates/Page/Default.html'
+			sectionName = 'metadata'
+		}
+
+
 	}
 
 	body {
