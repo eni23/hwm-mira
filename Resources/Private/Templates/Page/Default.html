@@ -29,7 +29,21 @@
 
 		<f:section name="body">
 			{parts.mainMenu -> f:format.raw()}
-			{content.main -> f:format.raw()}
+
+			<f:if condition="{landingPage}">
+				<div class="jumbotron top-jumbotron" style="background-image: url({imageUri});')}"{f:if(condition: imageTitleText, then: ' title="{imageTitleText}"')}>
+					<div class="container">
+						{content.teaser -> f:format.raw()}
+					</div>
+				</div>
+			</f:if>
+
+			<div class="container main-container">
+      	<div class="row">
+					{content.main -> f:format.raw()}
+				</div>
+			</div>
+
 		</f:section>
 		<f:section name="bodyScripts">
 			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
