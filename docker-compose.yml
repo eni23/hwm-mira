@@ -1,0 +1,27 @@
+upweb:
+  image: dimaip/docker-neos-alpine:latest
+  ports:
+    - '80:80'
+    - '8022:22'
+  links:
+    - db:db
+  volumes:
+    - ./data_db:/data
+    - ./e23.miraWebsite:/site-package
+  environment:
+    REPOSITORY_URL: 'https://github.com/neos/neos-development-distribution'
+    #SITE_PACKAGE: 'e23.miraWebsite'
+    VERSION: '3.3'
+    ADMIN_PASSWORD: 'password'
+db:
+  image: mariadb:latest
+  expose:
+    - 3306
+  volumes:
+    - ./data_db:/var/lib/mysql
+  environment:
+    MYSQL_DATABASE: 'db'
+    MYSQL_USER: 'admin'
+    MYSQL_PASSWORD: 'pass'
+    MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+    MYSQL_ROOT_PASSWORD: '123qwe'
